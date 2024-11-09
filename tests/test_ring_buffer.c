@@ -7,22 +7,20 @@
 
 void test_ring_buffer_init_sanity(void) {
     ring_buffer_t ring_buffer;
-    uint8_t buffer[2 * CAPACITY];
+    uint8_t buffer[CAPACITY];
 
-    TEST_ASSERT_EQUAL(
-        STATIC_QUEUE_RET_SUCCESS,
-        ring_buffer_init(&ring_buffer, buffer, sizeof(buffer), CAPACITY));
+    TEST_ASSERT_EQUAL(STATIC_QUEUE_RET_SUCCESS,
+                      ring_buffer_init(&ring_buffer, buffer, CAPACITY));
     TEST_ASSERT_EQUAL_size_t(0, ring_buffer.length);
     TEST_ASSERT_EQUAL_size_t(CAPACITY, ring_buffer.capacity);
 }
 
 void test_ring_buffer_push_sanity(void) {
     ring_buffer_t ring_buffer;
-    uint8_t buffer[2 * CAPACITY];
+    uint8_t buffer[CAPACITY];
 
-    TEST_ASSERT_EQUAL(
-        STATIC_QUEUE_RET_SUCCESS,
-        ring_buffer_init(&ring_buffer, buffer, sizeof(buffer), CAPACITY));
+    TEST_ASSERT_EQUAL(STATIC_QUEUE_RET_SUCCESS,
+                      ring_buffer_init(&ring_buffer, buffer, CAPACITY));
 
     uint8_t data[CAPACITY] = {1, 2, 3, 4, 5};
 
@@ -33,11 +31,10 @@ void test_ring_buffer_push_sanity(void) {
 
 void test_ring_buffer_push_until_full(void) {
     ring_buffer_t ring_buffer;
-    uint8_t buffer[2 * CAPACITY];
+    uint8_t buffer[CAPACITY];
 
-    TEST_ASSERT_EQUAL(
-        STATIC_QUEUE_RET_SUCCESS,
-        ring_buffer_init(&ring_buffer, buffer, sizeof(buffer), CAPACITY));
+    TEST_ASSERT_EQUAL(STATIC_QUEUE_RET_SUCCESS,
+                      ring_buffer_init(&ring_buffer, buffer, CAPACITY));
 
     uint8_t data = 1;
     for (size_t i = 0; i < CAPACITY; i++) {
@@ -53,11 +50,10 @@ void test_ring_buffer_push_until_full(void) {
 
 void test_ring_buffer_pop_sanity(void) {
     ring_buffer_t ring_buffer;
-    uint8_t buffer[2 * CAPACITY];
+    uint8_t buffer[CAPACITY];
 
-    TEST_ASSERT_EQUAL(
-        STATIC_QUEUE_RET_SUCCESS,
-        ring_buffer_init(&ring_buffer, buffer, sizeof(buffer), CAPACITY));
+    TEST_ASSERT_EQUAL(STATIC_QUEUE_RET_SUCCESS,
+                      ring_buffer_init(&ring_buffer, buffer, CAPACITY));
 
     uint8_t push_data[CAPACITY] = {1, 2, 3, 4, 5};
     uint8_t pop_data[CAPACITY] = {0};
@@ -78,11 +74,10 @@ void test_ring_buffer_pop_sanity(void) {
 
 void test_ring_buffer_pop_until_empty(void) {
     ring_buffer_t ring_buffer;
-    uint8_t buffer[2 * CAPACITY];
+    uint8_t buffer[CAPACITY];
 
-    TEST_ASSERT_EQUAL(
-        STATIC_QUEUE_RET_SUCCESS,
-        ring_buffer_init(&ring_buffer, buffer, sizeof(buffer), CAPACITY));
+    TEST_ASSERT_EQUAL(STATIC_QUEUE_RET_SUCCESS,
+                      ring_buffer_init(&ring_buffer, buffer, CAPACITY));
 
     uint8_t push_data[CAPACITY] = {1, 2, 3, 4, 5};
 
@@ -108,11 +103,10 @@ void test_ring_buffer_pop_until_empty(void) {
 
 void test_ring_buffer_data_overlap(void) {
     ring_buffer_t ring_buffer;
-    uint8_t buffer[2 * CAPACITY];
+    uint8_t buffer[CAPACITY];
 
-    TEST_ASSERT_EQUAL(
-        STATIC_QUEUE_RET_SUCCESS,
-        ring_buffer_init(&ring_buffer, buffer, sizeof(buffer), CAPACITY));
+    TEST_ASSERT_EQUAL(STATIC_QUEUE_RET_SUCCESS,
+                      ring_buffer_init(&ring_buffer, buffer, CAPACITY));
 
     uint8_t push_data[3] = {1, 2, 3};
 

@@ -7,18 +7,12 @@
 
 static_queue_ret_t ring_buffer_init(ring_buffer_t* ring_buffer,
                                     uint8_t* data,
-                                    size_t data_size,
-                                    size_t capacity) {
-    if (NULL == ring_buffer || NULL == data || 0 == data_size ||
-        0 == capacity) {
+                                    size_t data_size) {
+    if (NULL == ring_buffer || NULL == data || 0 == data_size) {
         return STATIC_QUEUE_RET_INVALID_ARGS;
     }
 
-    if (data_size < capacity) {
-        return STATIC_QUEUE_RET_INVALID_ARGS;
-    }
-
-    ring_buffer->capacity = capacity;
+    ring_buffer->capacity = data_size;
     ring_buffer->buffer = data;
     ring_buffer->length = 0;
     ring_buffer->start = 0;
