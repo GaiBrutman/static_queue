@@ -4,6 +4,7 @@
  * @brief Return codes for the static queue library.
  */
 typedef enum {
+    STATIC_QUEUE_RET_UNINITIALIZED = -1,
     STATIC_QUEUE_RET_SUCCESS = 0,
     STATIC_QUEUE_RET_INVALID_ARGS,
     STATIC_QUEUE_RET_FULL,
