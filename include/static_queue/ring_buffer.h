@@ -19,8 +19,7 @@ typedef struct ring_buffer_s {
 
 static_queue_ret_t ring_buffer_init(ring_buffer_t* ring_buffer,
                                     uint8_t* data,
-                                    size_t data_size,
-                                    size_t capacity);
+                                    size_t data_size);
 
 static_queue_ret_t ring_buffer_push(ring_buffer_t* ring_buffer,
                                     const void* data,
