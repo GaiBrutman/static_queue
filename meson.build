@@ -39,4 +39,14 @@ if not meson.is_subproject()
       install: false,
     ),
   )
+
+  test(
+    'test_static_queue',
+    executable(
+      'test_static_queue',
+      ['tests/test_static_queue.c'],
+      dependencies: [project_dep, test_dep],
+      install: false,
+    ),
+  )
 endif
