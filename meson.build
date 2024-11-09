@@ -10,6 +10,7 @@ project(
 project_headers = include_directories('include')
 project_source_files = [
   'src/static_queue.c',
+  'src/ring_buffer.c',
 ]
 
 project_target = library(
@@ -30,10 +31,10 @@ if not meson.is_subproject()
   subdir('tests')
 
   test(
-    'test_sanity',
+    'test_ring_buffer',
     executable(
-      'test_sanity',
-      ['tests/test_sanity.c'],
+      'test_ring_buffer',
+      ['tests/test_ring_buffer.c'],
       dependencies: [project_dep, test_dep],
       install: false,
     ),
