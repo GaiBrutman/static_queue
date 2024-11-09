@@ -1,7 +1,7 @@
 project(
   'static_queue',
   'c',
-  version: '0.1.0',
+  version: '0.2.0',
   meson_version: '>=1.1.0',
   default_options: ['buildtype=release', 'warning_level=3'],
   license: 'MIT license',
