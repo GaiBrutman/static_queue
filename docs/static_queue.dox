@@ -1,0 +1,16 @@
+# Doxyfile 1.12.0
+
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "Static Queue"
+OUTPUT_DIRECTORY       = _build/doxygen/static_queue
+FULL_PATH_NAMES        = NO
+OPTIMIZE_OUTPUT_FOR_C  = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+WARN_IF_UNDOCUMENTED   = NO
+INPUT                  = ../../static_queue/include
+RECURSIVE              = YES
+GENERATE_HTML          = NO
+GENERATE_LATEX         = NO
+GENERATE_XML           = YES
