@@ -1,5 +1,7 @@
 # Static Queue
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/GaiBrutman/static_queue/main.yml)
+
 An efficient , statically allocated queue
 
 ## Structure
