@@ -60,6 +60,7 @@ venv/
 # Build system
 build/
 dist/
+_build/
 
 # MacOs
 .DS_Store
