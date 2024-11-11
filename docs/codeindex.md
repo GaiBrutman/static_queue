@@ -1,6 +1,6 @@
-Static Queue documentation
-==========================
+# Static Queue Code Index
 
+```{toctree}
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -11,3 +11,4 @@ Static Queue documentation
 .. doxygenenum::
 .. doxygentypedef::
 .. doxygenclass::
+```

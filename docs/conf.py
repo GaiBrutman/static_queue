@@ -23,7 +23,10 @@ author = "Gai Brutman"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["breathe"]
+extensions = [
+    "breathe",
+    "myst_parser",
+]
 
 breathe_projects = {"static_queue": "_build/doxygen/static_queue/xml"}
 breathe_default_project = "static_queue"
